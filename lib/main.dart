@@ -10,21 +10,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  Widget get currentWidget => defaultTargetPlatform == TargetPlatform.android
+      ? AndroidWidget()
+      : IOSWidget();
+
   @override
   Widget build(BuildContext context) {
-    Widget currentWidget = IOSWidget();
-    switch (defaultTargetPlatform) {
-      case TargetPlatform.android:
-        currentWidget = AndroidWidget();
-        break;
-      case TargetPlatform.iOS:
-        currentWidget = IOSWidget();
-        break;
-      default:
-        IOSWidget();
-    }
-
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
