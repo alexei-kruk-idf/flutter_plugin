@@ -42,7 +42,7 @@ class FLNativeView: NSObject, FlutterPlatformView {
     }
 
     func createNativeView(view _view: UIView){
-        _view.backgroundColor = UIColor.blue
+         _view.backgroundColor = UIColor.blue
         let nativeLabel = UILabel()
         nativeLabel.text = "Native text from iOS"
         nativeLabel.textColor = UIColor.white
@@ -50,4 +50,5 @@ class FLNativeView: NSObject, FlutterPlatformView {
         nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
         _view.addSubview(nativeLabel)
     }
+    
 }
